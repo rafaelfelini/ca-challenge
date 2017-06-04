@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Field from '../../components/Field';
 
-it('renders without crashing', () => {
+it('should renders without crashing', () => {
   shallow(<Field name="myField"  placeholder="Foo bar" />);
 });
 
-it('onInput property', () => {
+it('should render a input with onInput event', () => {
   const onInput = jest.fn();
   const div = document.createElement('div');
   const field = shallow(<Field name="myField" placeholder="Foo bar" onInput={onInput}/>, div);

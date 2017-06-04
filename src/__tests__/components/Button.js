@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Button from '../../components/Button';
 
-it('renders without crashing', () => {
+it('should renders without crashing', () => {
   shallow(<Button label="Foo bar" />);
 });
 
-it('onClick property - render a `button` element', () => {
+it('should return a `button` with onClick event', () => {
   const onClick = jest.fn();
   const div = document.createElement('div');
   const button = shallow(<Button label="Foo bar" onClick={onClick}/>, div);
@@ -16,7 +16,7 @@ it('onClick property - render a `button` element', () => {
   expect(onClick).toBeCalled();
 });
 
-it('url property - render a `Link` component (react-router)', () => {
+it('should return a `Link` with `to` property', () => {
   const div = document.createElement('div');
   const button = shallow(<Button label="Foo bar" url='foo/bar'/>, div);
 
