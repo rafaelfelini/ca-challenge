@@ -11,14 +11,16 @@
     "@kadira/storybook": "^2.21.0",
     "chokidar": "^1.7.0",
     "react-scripts": "1.0.7",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "stylint": "^1.5.9"
   },
   "scripts": {
     "build-css": "stylus src/css/base.styl -o src/index.css",
     "watch-css": "npm run build-css && chokidar 'src/**/*.styl' 'npm run build-css'",
+    "lint-css": "stylint src",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "npm run lint-css && react-scripts test --env=jsdom",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   }
