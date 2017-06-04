@@ -1,0 +1,31 @@
+$unit_button-height = 40px
+$unit_button-padding = 35px
+
+.button
+  border 0
+  border-radius $unit_radius
+  color $color_white
+  cursor pointer
+  display inline-block
+  height $unit_button-height
+  line-height $unit_button-height
+  padding 0 $unit_button-padding
+  text-decoration none
+
+  &--primary
+    background-color $color_blue-5
+
+    &:hover
+      background-color lighten($color_blue-5, 6)
+
+    &:active
+      background-color darken($color_blue-5, 10)
+
+  &--secondary
+    background-color $color_green-1
+
+    &:hover
+      background-color lighten($color_green-1, 6)
+
+    &:active
+      background-color darken($color_green-1, 10)

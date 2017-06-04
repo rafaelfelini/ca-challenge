@@ -11,6 +11,7 @@
     "@kadira/storybook": "^2.21.0",
     "chokidar-cli": "^1.2.0",
     "npm-run-all": "^4.0.2",
+    "prop-types": "^15.5.10",
     "react-scripts": "1.0.7",
     "stylint": "^1.5.9",
     "stylus": "^0.54.5"
