@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Header from '../../components/Header';
+import Button from '../../components/Button';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  shallow(<Header />, div);
+  shallow(<Button />, div);
 });
