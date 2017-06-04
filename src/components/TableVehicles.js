@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatCurrency from '../utils/format-currency';
 
 /**
  * Table cell
@@ -7,17 +8,17 @@ import PropTypes from 'prop-types';
 const TableVehiclesCell = ({ value, type }) => {
 
   const formatCellData = {
-    text: (value) => value,
     checkbox: (value) => value,
-    currency: (value) => value,
+    currency: (value) => formatCurrency(value),
     image: (value) => value,
+    text: (value) => value,
   }
 
   return (
     <div className="table-vehicles__cell">
       {formatCellData[type](value)}
     </div>
-  )
+  );
 };
 
 TableVehiclesCell.propTypes = {
@@ -52,13 +53,13 @@ TableVehiclesRow.defaultProps = {
  */
 const TableVehiclesBodyRow = (props) => (
   <TableVehiclesRow>
-    <TableVehiclesCell value={props.placa} />
+    <TableVehiclesCell type="checkbox"/>
     <TableVehiclesCell value={props.placa} />
     <TableVehiclesCell value={props.modelo} />
     <TableVehiclesCell value={props.marca} />
-    <TableVehiclesCell value={props.foto} />
+    <TableVehiclesCell value={props.foto} type="image" />
     <TableVehiclesCell value={props.combustivel} />
-    <TableVehiclesCell value={props.valor} />
+    <TableVehiclesCell value={props.valor} type="currency" />
   </TableVehiclesRow>
 );
 
@@ -88,9 +89,9 @@ const TableVehicles = ({ data }) => {
           <TableVehiclesCell value="Placa" />
           <TableVehiclesCell value="Modelo" />
           <TableVehiclesCell value="Marca" />
-          <TableVehiclesCell value="Foto" type="image" />
+          <TableVehiclesCell value="Foto" />
           <TableVehiclesCell value="Combustível" />
-          <TableVehiclesCell value="Valor" type="currency" />
+          <TableVehiclesCell value="Valor" />
         </TableVehiclesRow>
 
         {
