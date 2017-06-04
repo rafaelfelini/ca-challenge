@@ -48,6 +48,8 @@ Esse *starter kit* contém algumas tasks simples que agilizam no desenvolvimento
 
 ### Tarefas
 
-* `yarn start`: Sobe um servidor de desenvolvimento em sua máquina (normalmente na porta `:3000`) com environment de dev e todos os debugs habilitados
+* `yarn start`: Sobe um servidor local de desenvolvimento com environment de dev e todos os debugs habilitados
 * `yarn build`: Gera o build de produção da app para hospedar em um servidor estático
-* `yarn test`: roda os testes em modo iterativo
+* `yarn storybook`: Sobe um servidor local com o Storybook
+* `yarn storybook`: Gera o build do storybook para hospedagem em um servidor estático
+* `yarn test`: Roda os testes em modo iterativo
