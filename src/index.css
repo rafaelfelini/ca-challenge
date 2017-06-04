@@ -191,54 +191,24 @@ template {
 [hidden] {
   display: none;
 }
-.App {
-  background-color: #ffd700;
+body {
+  background-color: #f1f4f9;
+}
+.header {
+  background-color: #2687e9;
+  height: 50px;
+  margin-bottom: 19px;
+  width: 100%;
+}
+.header__container {
+  margin: 0 auto;
+  max-width: 978px;
+  padding: 0 19px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  height: 50px;
 }
 .Dashboard {
   text-align: center;
-}
-.Dashboard-logo {
-  animation: Dashboard-logo-spin infinite 20s linear;
-  height: 80px;
-}
-.Dashboard-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: #fff;
-}
-.Dashboard-intro {
-  font-size: large;
-}
-@-moz-keyframes Dashboard-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes Dashboard-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes Dashboard-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Dashboard-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
