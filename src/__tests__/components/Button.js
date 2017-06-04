@@ -7,8 +7,8 @@ it('renders without crashing', () => {
 });
 
 it('onClick property - render a `button` element', () => {
-  const div = document.createElement('div');
   const onClick = jest.fn();
+  const div = document.createElement('div');
   const button = shallow(<Button label="Foo bar" onClick={onClick}/>, div);
 
   button.simulate('click');
