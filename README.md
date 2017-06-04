@@ -35,6 +35,20 @@ Esse *starter kit* contém algumas tasks simples que agilizam no desenvolvimento
 * Um script de build para agrupar JS, CSS e imagens para produção, com *sourcemaps*
 * Um *service-worker offline-first*  e um manifesto *web app*, que atende todos os criterios de *Progressive Web Apps*
 
+### [Stylus](http://stylus-lang.com/)
+> Pré-processador CSS baseado em NodeJS e que pussuí sintaxe próxima do Javascript convencional.
+
+Em muitas ocasiões pré-processadores CSS são uteis para reaproveitamento de código: configuração de variaveis, mixins, funcões, etc.
+
+O *Create React App* não possui nenhum pré-processador CSS integrado, portanto decidi escolher e configurar o *Stylus* pela simplicidade da sintaxe e facilidade de modularização.
+
+### [Storybook](https://storybook.js.org/)
+> Interface interativa para acessar e testar componentes do React
+
+Decidi utilizar o *storybook* para ter acesso a todos os componentes e testa-los manualmente quando necessário.
+
+Dentro do storybook é possível listar todos os componentes em uma interface separada da aplicação e também gerar e hospedar um *build* específico com essa interface rodando.
+
 ## Como rodar o projeto
 
 ### Dependencias
