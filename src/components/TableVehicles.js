@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isUri } from 'valid-url';
 import formatCurrency from '../utils/format-currency';
+
+/**
+ * Table helpers
+ */
+const getUrl = (value) => isUri(value) ?
+  (<a href={value} target="_blank" rel="noopener noreferrer">Imagem</a>)
+  : value;
+
+const formatValue = {
+  checkbox: (value) => value,
+  currency: formatCurrency,
+  image: getUrl,
+  text: (value) => value,
+}
 
 /**
  * Table cell
  */
 const TableVehiclesCell = ({ value, type }) => {
-
-  const formatCellData = {
-    checkbox: (value) => value,
-    currency: (value) => formatCurrency(value),
-    image: (value) => value,
-    text: (value) => value,
-  }
-
   return (
     <div className="table-vehicles__cell">
-      {formatCellData[type](value)}
+      {formatValue[type](value)}
     </div>
   );
 };
@@ -57,7 +64,7 @@ const TableVehiclesBodyRow = (props) => (
     <TableVehiclesCell value={props.placa} />
     <TableVehiclesCell value={props.modelo} />
     <TableVehiclesCell value={props.marca} />
-    <TableVehiclesCell value={props.foto} type="image" />
+    <TableVehiclesCell value={props.imagem} type="image" />
     <TableVehiclesCell value={props.combustivel} />
     <TableVehiclesCell value={props.valor} type="currency" />
   </TableVehiclesRow>
@@ -67,13 +74,13 @@ TableVehiclesBodyRow.propTypes = {
   placa: PropTypes.string.isRequired,
   modelo: PropTypes.string.isRequired,
   marca: PropTypes.string.isRequired,
-  foto: PropTypes.string,
+  imagem: PropTypes.string,
   combustivel: PropTypes.string.isRequired,
   valor: PropTypes.string.isRequired,
 };
 
 TableVehiclesBodyRow.defaultProps = {
-  foto: 'Sem foto',
+  imagem: 'Sem imagem',
 };
 
 /**
@@ -97,12 +104,27 @@ const TableVehicles = ({ data }) => {
         {
 
           data.map(data => (
-            <TableVehiclesBodyRow {...data} />
+            <TableVehiclesBodyRow key={data.placa} {...data} />
           ))
         }
       </div>
     </div>
   );
 };
+
+TableVehicles.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    placa: PropTypes.string.isRequired,
+    modelo: PropTypes.string.isRequired,
+    marca: PropTypes.string.isRequired,
+    imagem: PropTypes.string,
+    combustivel: PropTypes.string.isRequired,
+    valor: PropTypes.string.isRequired,
+  })),
+}
+
+TableVehicles.defaultProps = {
+  data: [],
+}
 
 export default TableVehicles;

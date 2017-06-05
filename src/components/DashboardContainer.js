@@ -4,7 +4,6 @@ import Dashboard from './Dashboard';
 const mockedData = [
   {
     combustivel: 'Flex',
-    imagem: null,
     marca: 'Volkswagem',
     modelo: 'Gol',
     placa: 'FFF-5498',
@@ -12,7 +11,6 @@ const mockedData = [
   },
   {
     combustivel: 'Gasolina',
-    imagem: null,
     marca: 'Volkswagem',
     modelo: 'Fox',
     placa: 'FOX-4125',
