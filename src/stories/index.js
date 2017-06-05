@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Button from '../components/Button';
-import Header from '../components/Header';
 import Field from '../components/Field';
+import Header from '../components/Header';
+import TableVehicles from '../components/TableVehicles';
 import '../index.css';
+import setup from './setup.json';
 
 storiesOf('Header', module)
   .add('Default', () => (
@@ -21,4 +23,9 @@ storiesOf('Button', module)
 storiesOf('Field', module)
   .add('Primary', () => (
     <Field name="myField" onInput={action('Field changed')} placeholder="Field Component"/>
+  ));
+
+storiesOf('TableVehicles', module)
+  .add('Default', () => (
+    <TableVehicles data={setup.tableVehiclesData} />
   ));
