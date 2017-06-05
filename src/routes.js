@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from './components/App';
-import DashboardContainer from './components/DashboardContainer';
+import VehicleListContainer from './components/VehicleListContainer';
+import VehicleCreateContainer from './components/VehicleCreateContainer';
 
 const Routes = (props) => (
   <BrowserRouter {...props}>
     <App>
-      <Route path="/" component={DashboardContainer} />
+      <Route path="/" component={VehicleListContainer} />
+      <Route path="/creat" component={VehicleCreateContainer} />
     </App>
   </BrowserRouter>
 );

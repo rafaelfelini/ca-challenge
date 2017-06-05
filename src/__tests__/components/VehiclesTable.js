@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TableVehicles from '../../components/TableVehicles';
+import VehiclesTable from '../../components/VehiclesTable';
 
 it('should renders without crashing', () => {
-  shallow(<TableVehicles />);
+  shallow(<VehiclesTable />);
 });

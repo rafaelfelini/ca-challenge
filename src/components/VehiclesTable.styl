@@ -1,27 +1,27 @@
-.table-vehicles
+.vehicles-table
   overflow-x auto
   width 100%
 
-.table-vehicles__container
+.vehicles-table__container
   border 1px solid $color_grey-1
   border-radius $unit_radius
   display table
   min-width 100%
 
-.table-vehicles__row
+.vehicles-table__row
   background-color $color_white
   display table-row
   height $unit__table-row-height
 
   &:last-child
-    .table-vehicles__cell
+    .vehicles-table__cell
       border-bottom none
 
   &--header
     background-color $color_grey-0
     font-weight 600
 
-.table-vehicles__cell
+.vehicles-table__cell
   border-bottom 1px solid $color_grey-1
   color $color_blue-6
   display table-cell
@@ -30,7 +30,7 @@
   padding 0 $unit_table-row-padding
   vertical-align middle
 
-.table-vehicles__cell a
+.vehicles-table__cell a
   color $color_blue-4
   text-decoration underline
   text-decoration-color $color_blue-2

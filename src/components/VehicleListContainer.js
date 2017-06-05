@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dashboard from './Dashboard';
+import VehicleList from './VehicleList';
 
 const mockedData = [
   {
@@ -26,17 +26,17 @@ const mockedData = [
   }
 ]
 
-class DashboardContainer extends Component {
+class VehicleListContainer extends Component {
   search(e) {
     console.log(e.target.name, e.target.value);
   }
 
   render() {
-    return <Dashboard
+    return <VehicleList
         onSearch={this.search.bind()}
         data={mockedData}
       />
   }
 }
 
-export default DashboardContainer;
+export default VehicleListContainer;

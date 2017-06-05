@@ -3,7 +3,7 @@ import { storiesOf, action } from '@kadira/storybook';
 import Button from '../components/Button';
 import Field from '../components/Field';
 import Header from '../components/Header';
-import TableVehicles from '../components/TableVehicles';
+import VehiclesTable from '../components/VehiclesTable';
 import '../index.css';
 import setup from './setup.json';
 
@@ -25,7 +25,7 @@ storiesOf('Field', module)
     <Field name="myField" onInput={action('Field changed')} placeholder="Field Component"/>
   ));
 
-storiesOf('TableVehicles', module)
+storiesOf('VehiclesTable', module)
   .add('Default', () => (
-    <TableVehicles data={setup.tableVehiclesData} />
+    <VehiclesTable data={setup.VehiclesTableData} />
   ));
