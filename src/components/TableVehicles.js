@@ -6,9 +6,9 @@ import formatCurrency from '../utils/format-currency';
 /**
  * Table helpers
  */
-const getImageAnchor = (value = 'Sem foto') => isUri(value) ?
+const getImageAnchor = (value) => isUri(value) ?
   (<a href={value} target="_blank" rel="noopener noreferrer">Imagem</a>)
-  : value;
+  : value || 'Sem foto';
 
 const formatValue = {
   checkbox: (value) => value,
