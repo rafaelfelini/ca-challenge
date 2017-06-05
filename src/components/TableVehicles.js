@@ -6,14 +6,14 @@ import formatCurrency from '../utils/format-currency';
 /**
  * Table helpers
  */
-const getUrl = (value) => isUri(value) ?
+const getImageAnchor = (value = 'Sem foto') => isUri(value) ?
   (<a href={value} target="_blank" rel="noopener noreferrer">Imagem</a>)
   : value;
 
 const formatValue = {
   checkbox: (value) => value,
   currency: formatCurrency,
-  image: getUrl,
+  image: getImageAnchor,
   text: (value) => value,
 }
 
@@ -39,51 +39,6 @@ TableVehiclesCell.defaultProps = {
 }
 
 /**
- * Table row
- */
-const TableVehiclesRow = ({ children, modifier }) => (
-  <div className={'table-vehicles__row' + (modifier ? ` table-vehicles__row--${modifier}` : '')}>
-    {children}
-  </div>
-);
-
-TableVehiclesRow.propTypes = {
-  modifier: PropTypes.string,
-};
-
-TableVehiclesRow.defaultProps = {
-  modifier: undefined,
-}
-
-/**
- * Table body row
- */
-const TableVehiclesBodyRow = (props) => (
-  <TableVehiclesRow>
-    <TableVehiclesCell type="checkbox"/>
-    <TableVehiclesCell value={props.placa} />
-    <TableVehiclesCell value={props.modelo} />
-    <TableVehiclesCell value={props.marca} />
-    <TableVehiclesCell value={props.imagem} type="image" />
-    <TableVehiclesCell value={props.combustivel} />
-    <TableVehiclesCell value={props.valor} type="currency" />
-  </TableVehiclesRow>
-);
-
-TableVehiclesBodyRow.propTypes = {
-  placa: PropTypes.string.isRequired,
-  modelo: PropTypes.string.isRequired,
-  marca: PropTypes.string.isRequired,
-  imagem: PropTypes.string,
-  combustivel: PropTypes.string.isRequired,
-  valor: PropTypes.string.isRequired,
-};
-
-TableVehiclesBodyRow.defaultProps = {
-  imagem: 'Sem imagem',
-};
-
-/**
  * Table
  * @param {[type]} data [description]
  */
@@ -91,7 +46,7 @@ const TableVehicles = ({ data }) => {
   return (
     <div className="table-vehicles">
       <div className="table-vehicles__container">
-        <TableVehiclesRow modifier="header">
+        <div className="table-vehicles__row table-vehicles__row--header">
           <TableVehiclesCell type="checkbox"/>
           <TableVehiclesCell value="Placa" />
           <TableVehiclesCell value="Modelo" />
@@ -99,12 +54,19 @@ const TableVehicles = ({ data }) => {
           <TableVehiclesCell value="Foto" />
           <TableVehiclesCell value="Combustível" />
           <TableVehiclesCell value="Valor" />
-        </TableVehiclesRow>
+        </div>
 
         {
-
           data.map(data => (
-            <TableVehiclesBodyRow key={data.placa} {...data} />
+            <div className="table-vehicles__row" key={data.placa}>
+              <TableVehiclesCell type="checkbox"/>
+              <TableVehiclesCell value={data.placa} />
+              <TableVehiclesCell value={data.modelo} />
+              <TableVehiclesCell value={data.marca} />
+              <TableVehiclesCell value={data.imagem} type="image" />
+              <TableVehiclesCell value={data.combustivel} />
+              <TableVehiclesCell value={data.valor} type="currency" />
+            </div>
           ))
         }
       </div>
