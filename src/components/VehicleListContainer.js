@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import VehicleList from './VehicleList';
-import firebaseDatabase from '../utils/firebase/database';
 
 class VehicleListContainer extends Component {
   constructor(props) {
