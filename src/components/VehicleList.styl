@@ -1,7 +1,17 @@
 .vehicle-list
   container()
 
-  &__header
-    display flex
-    margin-bottom $unit_spacing
-    justify-content space-between
+.vehicle-list__header
+  display flex
+  flex-direction column
+  justify-content space-between
+  margin-bottom $unit_spacing
+
+  +breakpoint(sm)
+    flex-direction row
+
+.vehicle-list__search
+  margin-top $unit_spacing
+
+  +breakpoint(sm)
+    margin-top 0
