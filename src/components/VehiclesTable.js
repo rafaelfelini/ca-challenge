@@ -58,7 +58,7 @@ const VehiclesTable = ({ data }) => {
 
         {
           data.map(data => (
-            <div className="vehicles-table__row" key={data.placa}>
+            <div className="vehicles-table__row" key={data.key}>
               <VehiclesTableCell type="checkbox"/>
               <VehiclesTableCell value={data.placa} />
               <VehiclesTableCell value={data.modelo} />

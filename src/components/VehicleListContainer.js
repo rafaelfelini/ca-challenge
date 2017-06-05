@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import VehicleList from './VehicleList';
 import firebaseDatabase from '../utils/firebase/database';
 
@@ -16,8 +17,12 @@ class VehicleListContainer extends Component {
     this.initFirebaseRealtime();
   }
 
+  componentWillUnmount() {
+    this.realtime.off();
+  }
+
   initFirebaseRealtime() {
-    this.realtime = firebaseDatabase('vehicles');
+    this.realtime = firebase.database().ref('vehicles');
 
     this.realtime.ref.on('child_changed', (ref) => {
       this.updateVehicle(ref.key, ref.val());
