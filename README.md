@@ -49,6 +49,13 @@ Decidi utilizar o *storybook* para ter acesso a todos os componentes e testa-los
 
 Dentro do storybook é possível listar todos os componentes em uma interface separada da aplicação e também gerar e hospedar um *build* específico com essa interface rodando.
 
+### [Firebase Database](https://firebase.google.com/)
+> Armazenamento e sincronização de dados e Realtime (serverless)
+
+Levando em consideração o objetivo do projeto e as especificações eu decidi utilizar o *Firebase* ao invés de mockar os dados em variaveis, localStorage ou IndexedDB.
+
+O banco foi configurado de forma totalmente pública (leitura e escrita) e sem integração com servidor (serverless) o que permite sincronização realtime. Possível ver quando acessar a aplicação de em dois ou mais browsers ao mesmo tempo.
+
 ## Como rodar o projeto
 
 ### Dependencias
