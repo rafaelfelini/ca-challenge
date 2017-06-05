@@ -8,6 +8,7 @@ class VehicleListContainer extends Component {
 
     this.state = {
       vehicles: [],
+      visibleVehicles: [],
     };
   }
 
@@ -36,7 +37,10 @@ class VehicleListContainer extends Component {
 
     vehicle.key = key;
     vehicles.push(vehicle);
-    this.setState({vehicles});
+    this.setState({
+      vehicles,
+      visibleVehicles: vehicles,
+    });
   }
 
   updateVehicle(key, vehicle) {
@@ -50,26 +54,44 @@ class VehicleListContainer extends Component {
       return item
     })
 
-    this.setState({vehicles: currentVehicles});
+    this.setState({
+      vehicles: currentVehicles,
+      visibleVehicles: currentVehicles,
+    });
   }
 
   removeVehicle(key) {
     const { vehicles } = this.state;
     const currentVehicles = vehicles.filter(vehicle => vehicle.key !== key)
 
-    this.setState({vehicles: currentVehicles});
+    this.setState({
+      vehicles: currentVehicles,
+      visibleVehicles: currentVehicles,
+    });
   }
 
-  search(e) {
-    console.log(e.target.name, e.target.value);
+  filterVehicles(e) {
+    const { vehicles } = this.state;
+    const searchValue = e.target.value.toLocaleLowerCase();
+
+    const currentVehicles = vehicles.filter(vehicle => {
+      const combustivel = vehicle.combustivel.toLocaleLowerCase();
+      const marca = vehicle.marca.toLocaleLowerCase();
+
+      return combustivel.indexOf(searchValue) !== -1 ||marca.indexOf(searchValue) !== -1;
+    });
+
+    this.setState({
+      visibleVehicles: currentVehicles
+    });
   }
 
   render() {
-    const { vehicles } = this.state;
+    const { visibleVehicles } = this.state;
 
     return <VehicleList
-        onSearch={this.search.bind()}
-        data={vehicles}
+        onSearch={this.filterVehicles.bind(this)}
+        data={visibleVehicles}
       />
   }
 }
