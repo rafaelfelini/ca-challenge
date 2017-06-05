@@ -15,3 +15,8 @@ placeholder()
   &:-ms-input-placeholder
     {block}
 // @stylint on
+
+
+breakpoint($size)
+  @media screen and (min-width: lookup('$breakpoint_' + $size))
+    {block}

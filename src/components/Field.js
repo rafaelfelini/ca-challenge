@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Field = ({name, onInput, placeholder, type }) => (
+const Field = ({name, label, onInput, placeholder, type }) => (
   <div className="field">
+    {label ? (<label className="field__label">{label}</label>) : ''}
     <input className="field__input" name={name} onInput={onInput} placeholder={placeholder} type={type} />
   </div>
 );
