@@ -11,3 +11,10 @@ dependencies:
 test:
   override:
     - npm run test
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - npm run build
+      - aws s3 sync build s3://ca-challenge.s3-website-sa-east-1.amazonaws.com/ --delete
