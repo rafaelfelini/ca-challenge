@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Button from '../components/Button';
 import Field from '../components/Field';
+import Selector from '../components/Selector';
 import Header from '../components/Header';
 import VehiclesTable from '../components/VehiclesTable';
 import '../index.css';
@@ -22,7 +23,12 @@ storiesOf('Button', module)
 
 storiesOf('Field', module)
   .add('Primary', () => (
-    <Field name="myField" onInput={action('Field changed')} placeholder="Field Component"/>
+    <Field name="myField" onInput={action('Field changed')} label="My Field" placeholder="Field Component"/>
+  ));
+
+storiesOf('Selector', module)
+  .add('Primary', () => (
+    <Selector items={['Foo', 'Bar']} name="mySelector" onChange={action('Selector changed')} label="My Selector"/>
   ));
 
 storiesOf('VehiclesTable', module)
