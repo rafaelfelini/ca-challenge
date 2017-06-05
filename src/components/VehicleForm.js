@@ -6,7 +6,7 @@ import Selector from './Selector';
 
 const VehiclesForm = ({ onValueChange, onSubmit }) => (
   <div className="vehicle-form">
-    <div className="vehicle-form__header">
+    <div>
       <Button appearance="secondary" title="Voltar para listagem" label="Listagem" url="/vehicles" />
     </div>
 

@@ -18,10 +18,6 @@ class VehiclesFormContainer extends Component {
     };
   }
 
-  componentWillUnmount() {
-    this.realtime.off();
-  }
-
   submit(e) {
     e.preventDefault();
 
@@ -34,8 +30,8 @@ class VehiclesFormContainer extends Component {
       valor,
     } = this.state;
 
-    this.realtime = firebase.database().ref();
-    const vehicleKey = this.realtime.child('vehicles').push().key;
+    const realtime = firebase.database().ref();
+    const vehicleKey = realtime.child('vehicles').push().key;
     const data = {}
 
     data[`vehicles/${vehicleKey}`] = {
@@ -46,11 +42,12 @@ class VehiclesFormContainer extends Component {
       combustivel,
       valor,
     }
-    this.realtime.update(data);
 
-    this.setState({
-      redirectToList: true,
-    });
+    realtime.update(data);
+
+    realtime.off();
+
+    this.setState({ redirectToList: true });
   }
 
   valueChange(e) {
