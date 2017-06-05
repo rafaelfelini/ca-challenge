@@ -17,7 +17,7 @@ const VehiclesForm = ({ onValueChange, onSubmit }) => (
         <Field onInput={onValueChange} name="modelo" label="Modelo" placeholder="Modeo do veículo" required/>
       </div>
       <div className="vehicle-form__fieldset">
-        <Field onInput={onValueChange} name="imagem" label="Foto" placeholder="http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg"/>
+        <Field onInput={onValueChange} name="imagem" label="Foto" placeholder="Insira a URL"/>
         <Selector onChange={onValueChange} name="combustivel" items={['Flex', 'Alcool', 'Gasolina', 'Energia elétrica']} label="Combustível" required/>
         <Field onInput={onValueChange} name="valor" label="Valor" placeholder="00.000,00" required/>
       </div>
