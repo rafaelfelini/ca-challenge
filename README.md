@@ -64,7 +64,7 @@ O banco foi configurado de forma totalmente pública (leitura e escrita) e sem i
 
 ### Instalando localmente
 
-* Clone esse projeto para seu computador: `git clone [project_url] && cd ca-challenge`
+* Clone esse projeto para seu computador: `git clone git@github.com:willycamargo/ca-challenge.git && cd ca-challenge`
 * Instale as dependencias: `yarn`
 
 ### Tarefas
